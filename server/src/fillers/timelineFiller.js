@@ -6,17 +6,19 @@ const config = {
   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
 };
 
-module.exports.fill = (username) => {
+module.exports.fill = async (username) => {
   var twit = new Twit(config);
   var endpoint = "statuses/user_timeline";
 
+  console.log("config = ", config);
+
   var params = {
     screen_name: username,
-    count: 10,
+    count: 1,
     tweet_mode: "extended",
   };
 
-  var response = twit
+  var response = await twit
     .get(endpoint, params)
     .then((answer) => {
       return answer.data;
