@@ -13,7 +13,7 @@ class MainPage extends Component {
   render() {
     return (
       <div style={this.style}>
-        <SearchPage />
+        <SearchPage setUsername={this.props.setUsername} />
       </div>
     );
   }

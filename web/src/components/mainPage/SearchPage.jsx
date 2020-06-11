@@ -6,6 +6,11 @@ import SearchButton from "./SearchButton";
 
 class SearchPage extends Component {
   state = {};
+
+  sendQuery = () => {
+    this.props.setUsername(document.getElementById("searchBox").value);
+  };
+
   render() {
     return (
       <div className="spg">
@@ -13,8 +18,8 @@ class SearchPage extends Component {
           <Fweet />
         </div>
         <div className="bttm-main ctr-h">
-          <SearchBox />
-          <SearchButton />
+          <SearchBox sendQuery={this.sendQuery} />
+          <SearchButton sendQuery={this.sendQuery} />
         </div>
       </div>
     );

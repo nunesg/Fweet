@@ -11,7 +11,11 @@ class SearchButton extends Component {
     fontSize: "18px",
   };
   render() {
-    return <button style={this.style}>Enviar</button>;
+    return (
+      <button style={this.style} onClick={this.props.sendQuery}>
+        Enviar
+      </button>
+    );
   }
 }
 
