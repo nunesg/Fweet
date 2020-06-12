@@ -1,0 +1,7 @@
+.tl-entry {
+  padding: 10px;
+
+  border: 1px red solid;
+  display: grid;
+  align-items: center;
+}

@@ -15,15 +15,22 @@ class App extends Component {
   };
 
   setUsername = (user) => {
+    alert(`user ${user}`);
     this.setState({ querySubmitted: "true", username: user });
   };
+
+  redirect() {
+    if (this.state.querySubmitted === "true") {
+      return <Redirect to="/results" />;
+    }
+  }
   render() {
     return (
       <Router>
         <Switch>
           <Route path="/" exact>
             <MainPage setUsername={this.setUsername} />
-            {this.state.querySubmitted ? <Redirect to="/results" /> : () => {}}
+            <React.Fragment>{this.redirect()}</React.Fragment>
           </Route>
           <Route path="/results">
             <ResultsPage username={this.state.username} />

@@ -14,7 +14,7 @@ module.exports.fill = async (username) => {
 
   var params = {
     screen_name: username,
-    count: 1,
+    count: 2,
     tweet_mode: "extended",
   };
 

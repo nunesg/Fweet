@@ -1,39 +1,37 @@
 import React, { Component } from "react";
+import getTimeline from "./js/resultsPageController";
+import Nav from "./Nav";
+import Timeline from "./Timeline";
+import Profile from "./Profile";
+import Suggestions from "./Suggestions";
+import "./css/ResultsPage.css";
 
 class ResultsPage extends Component {
-  state = {};
+  state = {
+    timeline: [],
+  };
 
   componentDidMount() {
-    this.makeRequest();
+    getTimeline(this.props.username).then((timeline) => {
+      this.setState({ timeline: timeline });
+    });
   }
 
-  async makeRequest() {
-    var qry = {
-      type: "TIMELINE",
-      body: this.props.username,
-    };
-
-    console.log(JSON.stringify(qry));
-    var options = {
-      method: "POST", // *GET, POST, PUT, DELETE, etc.
-      credentials: "same-origin",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(qry), // body data type must match "Content-Type" header
-    };
-    console.log(options);
-    var response = await fetch("http://127.0.0.1:3333/api", options);
-    var timeline = await response.json();
-    console.log(timeline);
-
-    // var response = await fetch("http://localhost:3333/", { mode: "no-cors" });
-    // console.log(response.json());
-  }
   render() {
     return (
-      <div>
-        <h1>Results Page</h1>
+      <div className="results">
+        {/* <div style={{ border: "1px white solid" }}></div>
+        <div style={{ border: "1px white solid" }}></div>
+        <div style={{ border: "1px white solid" }}></div>
+        <div style={{ border: "1px white solid" }}></div>
+        <div style={{ border: "1px white solid" }}></div>
+        <div style={{ border: "1px white solid" }}></div>
+        <div style={{ border: "1px white solid" }}></div>
+        <div style={{ border: "1px white solid" }}></div> */}
+        <Nav />
+        <Profile />
+        <Timeline timeline={this.state.timeline} />
+        <Suggestions />
       </div>
     );
   }
