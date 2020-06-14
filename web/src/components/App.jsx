@@ -9,6 +9,7 @@ import MainPage from "components/mainPage/MainPage";
 import ResultsPage from "components/resultsPage/ResultsPage";
 import Home from "components/homePage/Home";
 import SearchOptions from "components/searchOptions/SearchOptions";
+import SearchPage from "components/searchPage/SearchPage";
 import * as authenticationController from "components/controllers/authenticationController.js";
 
 class App extends Component {
@@ -43,6 +44,9 @@ class App extends Component {
           </Route>
           <Route path="/search/options">
             <SearchOptions />
+          </Route>
+          <Route path="/searchPage">
+            <SearchPage />
           </Route>
         </Switch>
       </Router>

@@ -3,9 +3,16 @@ import "components/common/css/Button.css";
 
 class Button extends Component {
   state = {};
+  getClassName() {
+    var str = "bttn ";
+    if (this.props.small) {
+      str += "bttn-sm";
+    }
+    return str;
+  }
   render() {
     return (
-      <button className="bttn" onClick={this.props.onClick}>
+      <button className={this.getClassName()} onClick={this.props.onClick}>
         {this.props.content}
       </button>
     );

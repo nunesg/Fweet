@@ -17,13 +17,13 @@ class QueryOptions extends Component {
     return (
       <div className="main-content">
         <SubTitle />
-        <div className="bttn-m">
+        <div className="elem-m">
           <Button
             content={<MediaOption />}
             onClick={this.mediaSelected}
           ></Button>
         </div>
-        <div className="bttn-m">
+        <div className="elem-m">
           <Button
             content={<TimelineOption />}
             onClick={this.timelineSelected}

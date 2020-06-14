@@ -9,7 +9,7 @@ class Login extends Component {
       <div className="main-content">
         <Title />
         <Subtitle />
-        <div className="bttn-m">
+        <div className="elem-m">
           <Button content={<LoginButton />} onClick={this.props.onLoginClick} />
         </div>
       </div>
