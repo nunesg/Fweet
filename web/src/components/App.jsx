@@ -3,11 +3,13 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
   Redirect,
 } from "react-router-dom";
-import MainPage from "./mainPage/MainPage";
-import ResultsPage from "./resultsPage/ResultsPage.jsx";
+import MainPage from "components/mainPage/MainPage";
+import ResultsPage from "components/resultsPage/ResultsPage";
+import Home from "components/homePage/Home";
+import SearchOptions from "components/searchOptions/SearchOptions";
+import * as authenticationController from "components/controllers/authenticationController.js";
 
 class App extends Component {
   state = {
@@ -24,6 +26,7 @@ class App extends Component {
       return <Redirect to="/results" />;
     }
   }
+
   render() {
     return (
       <Router>
@@ -34,6 +37,12 @@ class App extends Component {
           </Route>
           <Route path="/results">
             <ResultsPage username={this.state.username} />
+          </Route>
+          <Route path="/home">
+            <Home onLoginClick={authenticationController.authenticate} />
+          </Route>
+          <Route path="/search/options">
+            <SearchOptions />
           </Route>
         </Switch>
       </Router>

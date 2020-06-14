@@ -1,0 +1,10 @@
+.navBar {
+  display: grid;
+  align-items: end;
+  grid-template-columns: repeat(12, auto);
+}
+
+.about {
+  font-size: 24px;
+  grid-column: 2;
+}

@@ -20,14 +20,6 @@ class ResultsPage extends Component {
   render() {
     return (
       <div className="results">
-        {/* <div style={{ border: "1px white solid" }}></div>
-        <div style={{ border: "1px white solid" }}></div>
-        <div style={{ border: "1px white solid" }}></div>
-        <div style={{ border: "1px white solid" }}></div>
-        <div style={{ border: "1px white solid" }}></div>
-        <div style={{ border: "1px white solid" }}></div>
-        <div style={{ border: "1px white solid" }}></div>
-        <div style={{ border: "1px white solid" }}></div> */}
         <Nav />
         <Profile />
         <Timeline timeline={this.state.timeline} />

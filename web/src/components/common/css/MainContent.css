@@ -1,0 +1,24 @@
+.main-content {
+  --margin-value: 10px;
+  align-items: center;
+  justify-content: center;
+  grid-row: 2/8;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.ttl {
+  margin: var(--margin-value);
+  font-size: 180px;
+  font-weight: 500;
+}
+
+.sub-ttl {
+  margin: var(--margin-value);
+  font-size: 36px;
+}
+
+.bttn-m {
+  margin: var(--margin-value);
+}

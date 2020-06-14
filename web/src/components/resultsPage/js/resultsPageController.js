@@ -14,5 +14,6 @@ export default async function getTimeline(username) {
   };
   var response = await fetch("http://192.168.100.8:3333/api", options);
   var res = await response.json();
+  console.log(res.timeline);
   return res.timeline;
 }
