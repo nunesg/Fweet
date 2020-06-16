@@ -1,0 +1,8 @@
+.nav-results {
+  display: flex;
+  height: 50px;
+  background-color: rgb(56, 0, 54);
+
+  padding: 10px 20px;
+  font-size: 18px;
+}

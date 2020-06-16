@@ -1,29 +1,15 @@
 import React, { Component } from "react";
-import getTimeline from "./js/resultsPageController";
-import Nav from "./Nav";
-import Timeline from "./Timeline";
-import Profile from "./Profile";
-import Suggestions from "./Suggestions";
-import "./css/ResultsPage.css";
+import Nav from "components/resultsPage/Nav";
+import Content from "components/resultsPage/Content";
+import "components/resultsPage/css/Results.css";
 
 class ResultsPage extends Component {
-  state = {
-    timeline: [],
-  };
-
-  componentDidMount() {
-    getTimeline(this.props.username).then((timeline) => {
-      this.setState({ timeline: timeline });
-    });
-  }
-
+  state = {};
   render() {
     return (
       <div className="results">
         <Nav />
-        <Profile />
-        <Timeline timeline={this.state.timeline} />
-        <Suggestions />
+        <Content />
       </div>
     );
   }

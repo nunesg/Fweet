@@ -53,7 +53,7 @@ class App extends Component {
           />
 
           <Route path="/results">
-            <h1>results</h1>
+            <ResultsPage />
           </Route>
         </Switch>
       </Router>

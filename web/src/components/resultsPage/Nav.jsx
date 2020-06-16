@@ -1,14 +1,10 @@
 import React, { Component } from "react";
-import "./css/Nav.css";
+import "components/resultsPage/css/NavResults.css";
 
 class Nav extends Component {
   state = {};
   render() {
-    return (
-      <div className="nav">
-        <div className="ttl">Results</div>
-      </div>
-    );
+    return <div className="nav-results"></div>;
   }
 }
 
