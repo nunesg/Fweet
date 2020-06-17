@@ -7,9 +7,9 @@ class Content extends Component {
   render() {
     return (
       <div className="content">
-        <div style={{ border: "1px red solid" }}>Profile</div>
+        <div>Profile</div>
         <Timeline />
-        <div style={{ border: "1px red solid" }}>Suggestions</div>
+        <div>Suggestions</div>
       </div>
     );
   }

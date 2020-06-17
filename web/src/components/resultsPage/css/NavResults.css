@@ -1,8 +1,28 @@
 .nav-results {
-  flex: 0 0 50px;
-  display: flex;
   background-color: rgb(56, 0, 54);
-
+  flex: 0 0 50px;
   padding: 10px 20px;
   font-size: 18px;
+  color: white;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.l-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.r-list {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.srch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
