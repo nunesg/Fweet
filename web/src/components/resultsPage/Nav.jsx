@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "components/resultsPage/css/NavResults.css";
 import Search from "components/resultsPage/Search";
+import Button from "components/common/Button";
 
 class Nav extends Component {
   state = {};
@@ -8,15 +9,14 @@ class Nav extends Component {
     return (
       <div className="nav-results">
         <div className="l-list">
-          <div>Content 1</div>
-          <div>Content 2</div>
+          <button>Home</button>
+          <button>Twitter</button>
         </div>
         <div className="srch">
           <Search />
         </div>
         <div className="r-list">
-          <div>Content 1</div>
-          <div>Content 2</div>
+          <button>Sign out</button>
         </div>
       </div>
     );

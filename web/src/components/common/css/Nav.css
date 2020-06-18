@@ -1,5 +1,7 @@
 .navBar {
   display: grid;
+
+  max-height: 70px;
   align-items: end;
   grid-template-columns: repeat(12, auto);
 }

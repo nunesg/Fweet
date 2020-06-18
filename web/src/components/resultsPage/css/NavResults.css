@@ -25,4 +25,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: auto;
+}
+
+.nav-results button {
+  background-color: rgba(0, 0, 0, 0);
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
+  margin: 0px 15px;
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
 }

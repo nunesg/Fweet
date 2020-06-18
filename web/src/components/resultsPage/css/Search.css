@@ -7,8 +7,7 @@
   font-size: 18px;
   font-weight: 500;
 
-  width: min-max(60vh, 400px);
-
+  width: 70%;
   display: flex;
   justify-content: flex-end;
 }
@@ -20,8 +19,8 @@
 }
 
 .search-panel > img {
-  height: 18px;
-  width: 18px;
+  height: 21px;
+  width: 21px;
   margin: 2px;
 }
 
@@ -33,5 +32,15 @@
   border: none;
   font-family: Arial, Helvetica, sans-serif;
 
+  min-width: 0px;
   padding: 2px 0px;
+}
+
+.media {
+  display: flex;
+  align-items: center;
+}
+
+.media:hover {
+  cursor: pointer;
 }

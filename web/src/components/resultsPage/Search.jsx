@@ -10,7 +10,9 @@ class Search extends Component {
         <input placeholder="Search" />
         <img src={SearchLogo} alt="search logo" />
         <div className="vline"></div>
-        <div>media</div>
+        <div className="media">
+          <span>Media</span>
+        </div>
       </div>
     );
   }
