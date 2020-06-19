@@ -1,19 +1,20 @@
-const fs = require("fs");
 const timelineFiller = require("../fillers/timelineFiller");
-const path = require("path");
 
-const RESULTS_PAGE_PATH = path.join(__dirname + "/public/resultsPage.html");
-
-module.exports.handle = async (request) => {
-  console.log("request", request);
-  switch (request.type) {
-    case "TIMELINE":
-      return await handleTimelineRequest(request.body);
+module.exports.handle = async ({ body: { type, username } }) => {
+  switch (type) {
+    case "timeline":
+      return await handleTimelineRequest(username);
+    case "media":
+      return await handleMediaRequest(username);
     default:
-      throw "Invalid request type";
+      throw ">> Invalid request type <<";
   }
 };
 
-async function handleTimelineRequest(req) {
-  return await timelineFiller.fill(req);
+async function handleTimelineRequest(username) {
+  return await timelineFiller.fill(username, false);
+}
+
+async function handleMediaRequest(username) {
+  return await timelineFiller.fill(username, true);
 }

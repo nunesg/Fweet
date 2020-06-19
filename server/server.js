@@ -8,11 +8,16 @@ app.use(cors());
 app.use(express.json({ limit: "10mb" }));
 app.listen(3333, () => console.log("Listening at 3333"));
 
-app.get("/", (req, res) => {
-  console.log("GET REQUEST");
-  res.json({ status: "success" });
-});
-
+/*
+  receives a query with a body as follows:
+    body: {
+      (headers)
+      body: {
+        type: media / timeline
+        username: (twitter username)
+      }
+    }
+*/
 app.post("/api", async (req, res) => {
   console.log(req);
   var timeline = await requestHandler.handle(req.body);

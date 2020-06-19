@@ -1,6 +1,6 @@
 module.exports.removeSpecialCharacters = (username) => {
   return Array.from(username)
-    .filter((c) => c.match(/[\w]/))
+    .filter((c) => c.match(/[\w]/)) // only words characters azAZ09_
     .join("");
 };
 
