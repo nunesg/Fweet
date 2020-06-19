@@ -1,8 +1,0 @@
-.tl {
-  display: grid;
-  grid-template-columns: 1fr;
-
-  font-weight: bold;
-
-  border: 1px white solid;
-}

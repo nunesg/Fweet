@@ -18,6 +18,7 @@ class SearchBox extends Component {
   render() {
     return (
       <input
+        id={this.props.id}
         className="sbox"
         type="text"
         onKeyUp={(event) => {

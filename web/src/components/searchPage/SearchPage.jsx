@@ -2,13 +2,16 @@ import React, { Component } from "react";
 import "components/common/css/MainContent.css";
 import SearchBox from "components/common/SearchBox";
 import Button from "components/common/Button";
+import * as Utils from "components/Utils.js";
 
 class SearchPage extends Component {
   state = {};
 
   submit = () => {
-    alert("submit!");
-    window.location.href = "/results";
+    var username = document.getElementById("sboxUsername").value;
+    username = Utils.removeSpecialCharacters(username);
+
+    window.location.pathname = `/results/${username}/${this.props.queryType}`;
   };
 
   render() {
@@ -19,13 +22,6 @@ class SearchPage extends Component {
           <SearchBox
             id="sboxUsername"
             placeholder="Username"
-            submit={this.submit}
-          />
-        </div>
-        <div className="elem-m">
-          <SearchBox
-            id="sboxFilterWords"
-            placeholder="Words to filter"
             submit={this.submit}
           />
         </div>

@@ -4,8 +4,15 @@ import Content from "components/resultsPage/Content";
 import "components/resultsPage/css/Results.css";
 
 class ResultsPage extends Component {
-  state = {};
+  state = {
+    username: "",
+    queryType: "",
+    timeline: [],
+    suggestions: [],
+    profile: [],
+  };
   render() {
+    console.log("result props: ", this.props);
     return (
       <div className="results">
         <Nav />

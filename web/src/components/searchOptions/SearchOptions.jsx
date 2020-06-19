@@ -5,17 +5,15 @@ import Button from "components/common/Button";
 class SearchOptions extends Component {
   state = {};
 
-  goToSearchPage = () => {
-    window.location.href = "/common/search";
+  goToSearchPage = (queryType) => {
+    window.location.href = `/common/search/${queryType}`;
   };
   mediaSelected = () => {
-    alert("Media selected");
-    this.goToSearchPage();
+    this.goToSearchPage("media");
   };
 
   timelineSelected = () => {
-    alert("Timeline selected");
-    this.goToSearchPage();
+    this.goToSearchPage("timeline");
   };
 
   render() {

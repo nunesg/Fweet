@@ -5,7 +5,6 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import MainPage from "components/mainPage/MainPage";
 import ResultsPage from "components/resultsPage/ResultsPage";
 import Home from "components/homePage/Home";
 import SearchOptions from "components/searchOptions/SearchOptions";
@@ -14,56 +13,38 @@ import * as AuthenticationController from "components/controllers/authentication
 import CommonPage from "./common/CommonPage";
 
 class App extends Component {
-  state = {
-    username: "",
-  };
-
-  setUsername = (user) => {
-    alert(`user ${user}`);
-    this.setState({ querySubmitted: "true", username: user });
-  };
-
-  redirect() {
-    if (this.state.querySubmitted === "true") {
-      return <Redirect to="/results" />;
-    }
-  }
-
   render() {
     return (
       <Router>
         <Switch>
-          {/* <Route path="/" exact>
-            <MainPage setUsername={this.setUsername} />
-            <React.Fragment>{this.redirect()}</React.Fragment>
-          </Route> */}
-          {/* <Route path="/results">
-            <ResultsPage username={this.state.username} />
-          </Route> */}
-
           <Route exact path="/">
             <Redirect to="/common" />
           </Route>
 
           <Route
             path="/common"
-            render={({ match, ...rest }) => {
+            render={({ match }) => {
               return <RenderCommon match={match} />;
             }}
           />
 
-          <Route path="/results">
-            <ResultsPage />
-          </Route>
+          <Route
+            path="/results/:username/:queryType"
+            render={({
+              match: {
+                params: { username, queryType },
+              },
+            }) => {
+              return <ResultsPage username={username} queryType={queryType} />;
+            }}
+          ></Route>
         </Switch>
       </Router>
     );
   }
 }
 
-function RenderCommon({ match }) {
-  var path = match.path;
-
+function RenderCommon({ match: { path } }) {
   return (
     <CommonPage>
       <Switch>
@@ -83,9 +64,9 @@ function RenderCommon({ match }) {
           }}
         />
         <Route
-          path={`${path}/search`}
-          render={() => {
-            return <SearchPage />;
+          path={`${path}/search/:queryType`}
+          render={({ match }) => {
+            return <SearchPage queryType={match.params.queryType} />;
           }}
         />
       </Switch>

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "components/resultsPage/css/NavResults.css";
 import Search from "components/resultsPage/Search";
-import Button from "components/common/Button";
 
 class Nav extends Component {
   state = {};
