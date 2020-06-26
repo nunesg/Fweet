@@ -1,17 +1,14 @@
-import React, { Component } from "react";
-import "components/common/css/CommonPage.css";
+import React from "react";
 import Nav from "components/common/Nav";
+import { StyledCommonPage } from "components/common/styled/StyledCommonPage";
 
-class CommonPage extends Component {
-  state = {};
-  render() {
-    return (
-      <div className="common-page">
-        <Nav />
-        {this.props.children}
-      </div>
-    );
-  }
-}
+const CommonPage = ({ children }) => {
+  return (
+    <StyledCommonPage>
+      <Nav />
+      {children}
+    </StyledCommonPage>
+  );
+};
 
 export default CommonPage;

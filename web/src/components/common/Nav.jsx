@@ -1,19 +1,12 @@
-import React, { Component } from "react";
-import "components/common/css/Nav.css";
+import React from "react";
+import { StyledNav } from "components/common/styled/StyledNav";
 
-class Nav extends Component {
-  state = {};
-  render() {
-    return (
-      <div className="navBar">
-        <About />
-      </div>
-    );
-  }
-}
-
-function About() {
-  return <span className="about">About</span>;
-}
+const Nav = () => {
+  return (
+    <StyledNav>
+      <span>About</span>
+    </StyledNav>
+  );
+};
 
 export default Nav;

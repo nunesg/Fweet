@@ -1,9 +1,9 @@
 .nav-results {
-  background-color: rgb(56, 0, 54);
+  background-color: #4f3961;
   flex: 0 0 50px;
   padding: 10px 20px;
   font-size: 18px;
-  color: white;
+  color: #6a097d;
 
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;

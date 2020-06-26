@@ -1,4 +1,6 @@
-.common-page {
+import styled from "styled-components";
+
+export const StyledCommonPage = styled.div`
   background-image: linear-gradient(
     to bottom right,
     rgba(29, 161, 242, 1),
@@ -13,4 +15,4 @@
   height: 100%;
   display: grid;
   grid-template-rows: repeat(8, 1fr);
-}
+`;

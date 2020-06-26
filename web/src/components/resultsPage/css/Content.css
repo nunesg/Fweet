@@ -1,8 +1,5 @@
 .content {
-  background-image: linear-gradient(
-    rgba(255, 0, 245, 0.7),
-    rgba(29, 161, 242, 1)
-  );
+  background-color: #f3d4d4;
 
   flex: 1 1 auto;
   display: grid;

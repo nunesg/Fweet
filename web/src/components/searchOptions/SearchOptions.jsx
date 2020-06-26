@@ -1,46 +1,39 @@
-import React, { Component } from "react";
-import "components/common/css/MainContent.css";
+import React from "react";
+import {
+  StyledMainContent,
+  StyledSubtitle,
+  StyledContent,
+} from "components/common/styled/StyledMainContent";
 import Button from "components/common/Button";
 
-class SearchOptions extends Component {
-  state = {};
-
-  goToSearchPage = (queryType) => {
+const SearchOptions = (props) => {
+  const goToSearchPage = (queryType) => {
     window.location.href = `/common/search/${queryType}`;
   };
-  mediaSelected = () => {
-    this.goToSearchPage("media");
+  const mediaSelected = () => {
+    goToSearchPage("media");
   };
 
-  timelineSelected = () => {
-    this.goToSearchPage("timeline");
+  const timelineSelected = () => {
+    goToSearchPage("timeline");
   };
 
-  render() {
-    console.log("this: ", this);
-    return (
-      <div className="main-content">
-        <SubTitle />
-        <div className="elem-m">
-          <Button
-            content={<MediaOption />}
-            onClick={this.mediaSelected}
-          ></Button>
-        </div>
-        <div className="elem-m">
-          <Button
-            content={<TimelineOption />}
-            onClick={this.timelineSelected}
-          ></Button>
-        </div>
-      </div>
-    );
-  }
-}
-
-function SubTitle() {
-  return <div className="sub-ttl">What are you searching for?</div>;
-}
+  console.log("props: ", props);
+  return (
+    <StyledMainContent>
+      <StyledSubtitle>What are you searching for?</StyledSubtitle>
+      <StyledContent>
+        <Button content={<MediaOption />} onClick={mediaSelected}></Button>
+      </StyledContent>
+      <StyledContent>
+        <Button
+          content={<TimelineOption />}
+          onClick={timelineSelected}
+        ></Button>
+      </StyledContent>
+    </StyledMainContent>
+  );
+};
 
 function MediaOption() {
   return <span>Relevant Media</span>;

@@ -1,33 +1,22 @@
-import React, { Component } from "react";
-import "components/common/css/SearchBox.css";
+import React from "react";
+import { SBoxInput } from "components/common/styled/StyledSBoxInput";
 
 // receives id, placeholder and submit() params
-class SearchBox extends Component {
-  state = {};
-
-  componentDidMount() {
-    this.setState({ id: this.id });
-  }
-
-  keyUpEvent = (event) => {
+const SearchBox = ({ id, placeholder, submit }) => {
+  const keyUpEvent = (event) => {
     if (event.keyCode === 13) {
-      this.props.submit();
+      submit();
     }
   };
 
-  render() {
-    return (
-      <input
-        id={this.props.id}
-        className="sbox"
-        type="text"
-        onKeyUp={(event) => {
-          this.keyUpEvent(event);
-        }}
-        placeholder={this.props.placeholder}
-      ></input>
-    );
-  }
-}
+  return (
+    <SBoxInput
+      id={id}
+      type="text"
+      onKeyUp={(event) => keyUpEvent(event)}
+      placeholder={placeholder}
+    ></SBoxInput>
+  );
+};
 
 export default SearchBox;

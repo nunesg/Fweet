@@ -1,23 +1,26 @@
-import React, { Component } from "react";
-import "components/common/css/Button.css";
+import React from "react";
+import {
+  StyledButton,
+  StyledSmallButton,
+} from "components/common/styled/StyledButton";
 
-class Button extends Component {
-  state = {};
-  getClassName() {
-    var str = "bttn ";
-    if (this.props.small) {
-      str += "bttn-sm";
-    }
-    return str;
-  }
-  render() {
-    return (
-      <button className={this.getClassName()} onClick={this.props.onClick}>
-        {this.props.content}
-        {this.props.children}
-      </button>
-    );
-  }
-}
+const smallButton = ({ onClick, ...props }) => {
+  return (
+    <StyledSmallButton onClick={onClick}>
+      {props.content}
+      {props.children}
+    </StyledSmallButton>
+  );
+};
+
+const Button = ({ small, onClick, ...props }) => {
+  if (small) return smallButton({ onClick, ...props });
+  return (
+    <StyledButton onClick={onClick}>
+      {props.content}
+      {props.children}
+    </StyledButton>
+  );
+};
 
 export default Button;
